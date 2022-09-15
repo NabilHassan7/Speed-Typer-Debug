@@ -120,6 +120,10 @@ const start = () => {
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
+      
+      // Added to remove timer when the count reaches zero
+      countdownOverlay.style.display = 'none';
+      countdownOverlay.innerText = '';
     }
     count--;
   }, 1000);
