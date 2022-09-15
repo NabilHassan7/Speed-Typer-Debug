@@ -27,6 +27,7 @@ const typeController = (e) => {
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
+    // Added errorCount to keep track of the number of total errors
     errorCount += 1;
     return display.removeChild(display.lastChild);
   }
