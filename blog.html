@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed Monster</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Bootstrap connection -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="title"><img src="./logo.png" /></h1>
+    
+    <div class="buttons">
+        <button disabled>BLOG SECTION</button>
+    </div>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample" style="margin-left: 50px; margin-right: 50px;">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              #Q1 - What are the differences between Local storage and Session storage?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                The difference between <code>Session Storage</code> and <code>Local Storage</code> is that <code>Local Storage</code>  data does not expire, whereas <code>Session Storage</code> data is cleared when the page session ends. <code>Local Storage</code> needs to be cleared manually
+                or using Javascript.
+                <code>Local Storage</code> can save upto 10MB of data while <code>Session Storage</code> can store upto 5MB of data.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                #Q2 - What are the differences betwee local scope and global scope?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+                The <code>scope</code> of a variable defines where it's accessible in a program based off of where it was created. Just because we create a variable in one place in our program doesn't mean it's going to be accessible from anywhere in our script.
+                <br><br>
+                <code>Global scope</code> contains all of the things defined outside of all code blocks. A code block simply consists of grouped statements inside curly braces ({ }). if statement, loops, function are examples of structure that create a code block. 
+                A global variable has global scope. A global variable is accessible from anywhere in the code.
+                <br><br>
+                <code>Local scope</code> contains things defined inside code blocks. A local variable has local scope. A local variable is only accessible where it’s declared.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                #Q3 - What is an event loop in Javascript?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+                The <code>event loop</code> is the secret behind JavaScript's asynchronous programming. 
+                JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.
+                <br><br>
+                The <code>call stack</code> is responsible for keeping track of all the operations in line to be executed. Whenever a function is finished, it is popped from the stack.
+                <br><br>
+                The <code>event queue</code> is responsible for sending new functions to the stack for processing. 
+                It follows the queue data structure to maintain the correct sequence in which all operations should be sent for execution.
+                <br><br>
+                Whenever an async function is called, it is sent to a browser API. These are APIs built into the browser. Based on the command received from the call stack, the API starts its own single-threaded operation.
+                An example of this is the <code>setTimeout</code> method. 
+                When a <code>setTimeout</code> operation is processed in the stack, it is sent to the corresponding API which waits till the specified time to send this operation back in for processing.
+                This operation is sent to the <code>event queue</code>. Hence, we have a cyclic system for running async operations in JavaScript. The language itself is single-threaded, but the browser APIs act as separate threads.
+                The <code>event loop</code> facilitates this process; it constantly checks whether or not the call stack is empty. If it is empty, new functions are added from the event queue. If it is not, then the current function call is processed.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                    #Q4 - In how many ways can we get undefined in Javascript?
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+              <div class="accordion-body">
+                In Javascript we can get <code>undefined</code> in the following ways: <br><br>
+                1. If we call upon a variable that wasn't initialized. <br>
+                2. If no return function call is made in a function. <br>
+                3. If a parameter is not passed to a function that requires one. <br>
+                4. If return is not given a specific value to return. <br>
+                5. If we call a property of an object that doesn't exist. <br>
+                6. If we call an index of an array that is out of range. <br>
+                7. Deleting an element inside an array using <code>delete</code> keyword. <br>
+                8. Directly declaring something as <code>undefined</code>.
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button><a href="./index.html" style="text-decoration: none; color: white;">Go back to Typing test</a></button>
+    </div>
+
+    <script src="./history.js"></script>
+    <script src="./script.js"></script>
+    <!-- Bootstrap connection -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
